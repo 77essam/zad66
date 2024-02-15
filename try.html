@@ -1,0 +1,116 @@
+<div class="case-studies-area-03 padding-top-120 padding-bottom-120">
+  <div class="container">
+      <div class="row justify-content-center wow slideInDown">
+          <div class="col-lg-12">
+              <div class="section-title desktop-center margin-bottom-60 grocery-home">
+                  <h2 class="title">بعض اعمالنا </h2>
+              </div>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-lg-12">
+              <div class="case-studies-masonry-wrapper">
+                  <div class="case-studies-menu style-01 wow slideInDown">
+                      <button id="all" class="active btn-dagency" data-filter="*">الكل</button>
+                      <button id="mthlat-moakf-alsyarat" class="btn-dagency" data-filter="mthlat-moakf-alsyarat">مظلات مواقف السيارات</button>
+                      <button id="design" class="btn-dagency" data-filter="design">التصميم الداخلي</button>
+                  </div>
+                  <div class="case-studies-masonry" id="case-studies">
+                      <!-- Your card items go here -->
+                      <div class="col-lg-4 col-md-4 col-sm-6 design masonry-item">
+                          <div class="single-case-studies-item wow zoomIn">
+                              <div class="thumb">
+                                  <img src="img/img2.jpeg" alt="" style="width:500px;height:300px;">
+                              </div>
+                              <div class="cart-icon">
+                                  <h4 class="title"><a href=""> الهياكل المعدنية ومظلات وقوف السيارات لشركة بيبسي بجدة</a></h4>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="col-lg-4 col-md-4 col-sm-6 masonry-item design">
+                          <div class="single-case-studies-item wow zoomIn">
+                              <div class="thumb">
+                                  <img src="img/img3.jpeg" alt="" style="width:500px;height:300px;">
+                              </div>
+                              <div class="cart-icon">
+                                  <h4 class="title"><a href=""> أشرعة ألعاب الأطفال لشركة الكهرباء في الأحساء</a></h4>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="col-lg-4 col-md-4 col-sm-6 masonry-item design">
+                          <div class="single-case-studies-item wow zoomIn">
+                              <div class="thumb">
+                                  <img src="img/img3.jpeg" alt="" style="width:500px;height:300px;">
+                              </div>
+                              <div class="cart-icon">
+                                  <h4 class="title"><a href=""> أشرعة ألعاب الأطفال لشركة الكهرباء في الأحساء</a></h4>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="col-lg-4 col-md-4 col-sm-6 masonry-item mthlat-moakf-alsyarat">
+                          <div class="single-case-studies-item wow zoomIn">
+                              <div class="thumb">
+                                  <img src="img/img4.jpeg" alt="" style="width:500px;height:300px;">
+                              </div>
+                              <div class="cart-icon">
+                                  <h4 class="title"><a href=""> هياكل حديدية و مظلات الشد الإنشائي</a></h4>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="col-lg-4 col-md-4 col-sm-6 masonry-item mthlat-moakf-alsyarat">
+                          <div class="single-case-studies-item wow zoomIn">
+                              <div class="thumb">
+                                  <img src="img/img5.jpeg" alt="" style="width:500px;height:300px;">
+                              </div>
+                              <div class="cart-icon">
+                                  <h4 class="title"><a href=""> هياكل معدنية و مظلات مواقف السيارات</a></h4>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+      const buttons = document.querySelectorAll(".btn-dagency");
+      const caseStudies = document.getElementById("case-studies");
+
+      buttons.forEach((button) => {
+          button.addEventListener("click", () => {
+              const filter = button.getAttribute("data-filter");
+
+              // Hide all cards
+              const cards = caseStudies.querySelectorAll(".masonry-item");
+              cards.forEach((card) => {
+                  card.style.display = "none";
+              });
+
+              // Show cards matching the filter
+              if (filter === "*") {
+                  cards.forEach((card) => {
+                      card.style.display = "block";
+                  });
+              } else {
+                  const filteredCards = caseStudies.querySelectorAll("." + filter);
+                  filteredCards.forEach((card) => {
+                      card.style.display = "block";
+                  });
+              }
+
+              // Update active button
+              buttons.forEach((btn) => {
+                  btn.classList.remove("active");
+              });
+              button.classList.add("active");
+          });
+      });
+  });
+</script>
